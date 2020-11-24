@@ -31,6 +31,8 @@ Route::get('/', function () {
     $art01 = DB::table('articles')->where('id', 1)->update([
         'body' => ' This is article 01 the updated'
     ]);
+
+    $art01 = DB::table('articles')->where('id', 4)->delete();
     dd($art01);
     return view('welcome');
 });
