@@ -17,8 +17,8 @@ Route::get('/', function () {
 
     $articles = DB::table('articles')->get();   
     
-  
-    dd($articles);
+    $art01 = DB::table('articles')->where('id', 1)->get(); 
+    dd($art01);
     return view('welcome');
 });
 
