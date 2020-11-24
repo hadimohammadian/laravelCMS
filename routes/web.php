@@ -23,6 +23,11 @@ Route::get('/', function () {
     $art01 = DB::table('articles')->count();
     $art01 = DB::table('articles')->select('slug','body')->get();
     $art01 = DB::table('articles')->orderby('id','desc')->get();
+    $art01 = DB::table('articles')->insert([
+        'title' => 'TITLE 03 ',
+        'slug' => 'title-03',
+        'body' => 'this is a title-03'
+    ]);
     dd($art01);
     return view('welcome');
 });
