@@ -18,6 +18,8 @@ Route::get('/', function () {
     $articles = DB::table('articles')->get();   
     
     $art01 = DB::table('articles')->where('id', 1)->get(); 
+    $art01 = DB::table('articles')->find(1); 
+    $art01 = DB::table('articles')->where('id', 1)->value('body');
     dd($art01);
     return view('welcome');
 });
