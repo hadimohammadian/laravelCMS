@@ -22,6 +22,7 @@ Route::get('/', function () {
     $art01 = DB::table('articles')->where('id', 1)->value('body');
     $art01 = DB::table('articles')->count();
     $art01 = DB::table('articles')->select('slug','body')->get();
+    $art01 = DB::table('articles')->orderby('id','desc')->get();
     dd($art01);
     return view('welcome');
 });
