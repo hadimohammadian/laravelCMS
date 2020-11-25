@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
 
-    $articles = DB::table('articles')->get();   
-    
-    $art01 = DB::table('articles')->where('id', 1)->get(); 
-    $art01 = DB::table('articles')->find(1); 
+    $articles = DB::table('articles')->get();
+
+    $art01 = DB::table('articles')->where('id', 1)->get();
+    $art01 = DB::table('articles')->find(1);
     $art01 = DB::table('articles')->where('id', 1)->value('body');
     $art01 = DB::table('articles')->count();
     $art01 = DB::table('articles')->select('slug','body')->get();
@@ -33,6 +34,7 @@ Route::get('/', function () {
     ]);
 
     $art01 = DB::table('articles')->where('id', 4)->delete();
+    $art01 = App\Models\Article::all();
     dd($art01);
     return view('welcome');
 });
