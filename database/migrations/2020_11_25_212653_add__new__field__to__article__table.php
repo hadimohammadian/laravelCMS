@@ -14,7 +14,7 @@ class AddNewFieldToArticleTable extends Migration
     public function up()
     {
         Schema::table('Articles', function (Blueprint $table) {
-            //
+            $table->integer('view')->default(0);
         });
     }
 
@@ -26,7 +26,7 @@ class AddNewFieldToArticleTable extends Migration
     public function down()
     {
         Schema::table('Articles', function (Blueprint $table) {
-            //
+            $table->dropColumn('view');
         });
     }
 }
