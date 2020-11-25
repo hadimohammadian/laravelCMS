@@ -14,13 +14,7 @@ class ArticleTableSeeder extends Seeder
      */
     public function run()
     {
-        foreach (range(1,10) as $value) {
-            
-            DB::table('articles')->insert([
-                'title' => "title $value",
-                'slug' => "Title-$value",
-                'body' => "This is a title of  $value"
-            ]);
-        }
+        factory(Database\Factories\ArticleFactory::class,10)->create();
+
     }
 }
