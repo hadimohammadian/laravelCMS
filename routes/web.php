@@ -1,9 +1,10 @@
 <?php
 
+use App\Models\Article;
 use Illuminate\Support\Facades\Route;
+
 use Illuminate\Database\Eloquent\Factories\Factory;
-
-
+use Illuminate\Support\Facades\Validator;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,10 +67,23 @@ Route::prefix('admin')->group( function(){
 
         // dd(request()->all());
 
-        App\Models\Article::create([
-            'title' => request('title'),
-            'slug' => request('title'),
-            'body' => request('body')
+        // App\Models\Article::create([
+        //     'title' => request('title'),
+        //     'slug' => request('title'),
+        //     'body' => request('body')
+
+        // ]);
+
+
+        $validate_data = Validator::make(request()->all(),[
+            'title' => 'required|min:5',
+            'body' => 'required'
+        ])->validated();
+
+        Article::create([
+            'title' => $validate_data['title'],
+            'slug' => $validate_data['title']."0",
+            'body' => $validate_data['body']
 
         ]);
 
