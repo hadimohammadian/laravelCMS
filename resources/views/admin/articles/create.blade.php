@@ -9,10 +9,17 @@
 
 <form action="/admin/articles/create" method="POST">
     @csrf
-<label for="name" class="form-control">Name</label>
-<input type="text" id="name"  name="name" class="form-control">
-<br>
-<button class="btn btn-info" type="submit">Send</button>
+
+
+     <div class="form-group">
+        <label for="title"  >Title : </label>
+        <input type="text" id="title"  name="title" class="form-control">
+     </div>
+     <div class="form-group">
+        <label for="body"  >body : </label>
+        <input type="text" id="body"  name="body" class="form-control">
+     </div>
+    <button class="btn btn-info" type="submit">Send</button>
 </form>
 
 

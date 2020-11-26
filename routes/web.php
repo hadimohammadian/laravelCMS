@@ -63,6 +63,6 @@ Route::prefix('admin')->group( function(){
 
     Route::post('/articles/create', function () {
 
-        dd('POSTED');
+        dd(request()->all());
     });
 });
