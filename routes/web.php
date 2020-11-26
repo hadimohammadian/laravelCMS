@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -63,6 +64,13 @@ Route::prefix('admin')->group( function(){
 
     Route::post('/articles/create', function () {
 
-        dd(request()->all());
+        // dd(request()->all());
+
+        App\Models\Article::create([
+            'title' => request('title'),
+            'slug' => request('title'),
+            'body' => request('body')
+
+        ]);
     });
 });
