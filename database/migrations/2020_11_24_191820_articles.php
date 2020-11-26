@@ -16,9 +16,10 @@ class Articles extends Migration
         Schema::create('articles', function (Blueprint $table) {
             $table->id()->uniqid();
             $table->string('title');
-            $table->string('slug');
-            $table->string('body');
-            $table->timestamp('create_at');
+            $table->string('slug')->default('s00');
+            $table->string('body')->default('b00');
+            $table->timestamp('create_at')->nullable();
+            $table->timestamp('update_at')->nullable();
         });
     }
 
