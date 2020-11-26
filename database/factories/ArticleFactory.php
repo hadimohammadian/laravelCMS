@@ -22,10 +22,10 @@ class ArticleFactory extends Factory
      */
     public function definition(Faker $value)
     {
-        return [
-            'title' => $value->text(50),
-                'slug' => $value->slug(),
-                'body' => $value->paragraph(range(5,20))
-        ];
+        // return [
+        //     'title' => $value->text(50),
+        //         'slug' => $value->slug(),
+        //         'body' => $value->paragraph(range(5,20))
+        // ];
     }
 }
